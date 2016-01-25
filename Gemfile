@@ -16,6 +16,10 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'figaro'
+
 
 group :development, :test do
   gem 'byebug'

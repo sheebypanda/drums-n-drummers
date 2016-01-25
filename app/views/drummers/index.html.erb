@@ -1,5 +1,6 @@
-<h1>Drummer list </h1>
-
+<h1>Drummers list</h1>
+<ul>
 <% @drummers.each do |drummer| %>
-  <%= drummer.name %>
+  <li><%= link_to drummer.name , drummer_path(drummer) %></li>
 <% end %>
+</ul>
