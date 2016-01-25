@@ -22,7 +22,14 @@ class DrummersController < ApplicationController
 
   def edit
     @drummer = Drummer.find(params[:id])
+    #Update TODO
+    redirect_to drummers_path
   end
+
+  def update
+    @drummer = Drummer.find(params[:id])
+  end
+
 
   def destroy
     drummer = Drummer.find(params[:id])
