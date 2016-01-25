@@ -2,6 +2,8 @@
 <ul>
 <% @drummers.each do |drummer| %>
   <li><h2><%= link_to drummer.name , drummer_path(drummer) %></h2></li>
-  <%= cl_image_tag(drummer.picture) %>
+  <%= cl_image_tag(drummer.picture, :width => 80, :height => 88,
+  :crop => :fill, :gravity => :face,
+  :radius => :max, :effect => :sepia ) %>
 <% end %>
 </ul>

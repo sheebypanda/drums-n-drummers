@@ -1,5 +1,5 @@
 <h1><%= @drummer.name %></h1>
-<%= @drummer.id %>
-<%= cl_image_tag(@drummer.picture) %>
+<%= cl_image_tag(@drummer.picture )%>
 
-<%= link_to "Remove", drummer_path(@drummer.id) , method: :delete %>
+<%= link_to "Edit", edit_drummer_path(@drummer.id) %>
+<%= link_to "Remove", drummer_path(@drummer.id) %>

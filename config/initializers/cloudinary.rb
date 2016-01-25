@@ -1,5 +1,5 @@
 Cloudinary.config do |config|
-  config.cloud_name = 'dkplmgvom'
+  config.cloud_name = 'Cloudinary_name'
   config.api_key = ENV['cloudinary_key']
   config.api_secret = ENV['cloudinary_secret']
   config.cdn_subdomain = true
