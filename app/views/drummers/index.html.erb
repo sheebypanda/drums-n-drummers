@@ -1,6 +1,7 @@
 <h1>Drummers list</h1>
 <ul>
 <% @drummers.each do |drummer| %>
-  <li><%= link_to drummer.name , drummer_path(drummer) %></li>
+  <li><h2><%= link_to drummer.name , drummer_path(drummer) %></h2></li>
+  <%= cl_image_tag(drummer.picture) %>
 <% end %>
 </ul>
