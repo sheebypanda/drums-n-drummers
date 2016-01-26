@@ -22,12 +22,13 @@ class DrummersController < ApplicationController
 
   def edit
     @drummer = Drummer.find(params[:id])
-    #Update TODO
-    redirect_to drummers_path
   end
 
   def update
-    @drummer = Drummer.find(params[:id])
+    drummer_params = params.require(:drummer).permit(:name, :picture)
+    drummer = Drummer.find(params[:id])
+    drummer.update(drummer_params)
+    redirect_to drummer_path
   end
 
 

@@ -1,5 +1,6 @@
-<h1><%= @drummer.name %></h1>
-<%= cl_image_tag(@drummer.picture )%>
+<h1 class="text-center"><%= @drummer.name %></h1>
+<%= cl_image_tag(@drummer.picture,:width => 150, :height => 150,
+             :crop => :thumb, :gravity => :face, :radius => :max )%>
 
-<%= link_to "Edit", edit_drummer_path(@drummer.id) %>
-<%= link_to "Remove", drummer_path(@drummer.id) %>
+<%= link_to "Edit", edit_drummer_path(@drummer.id), class: "btn btn-info"%>
+<%= link_to "Remove", drummer_path(@drummer.id), class: "btn btn-danger"%>
