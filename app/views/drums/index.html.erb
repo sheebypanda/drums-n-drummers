@@ -5,6 +5,7 @@
     <% i =  cl_image_tag(drum.picture, :width => 70, :height => 70, class: "img-rounded") %>
 
     <%= link_to i , drum_path(drum) %>
+    <%= link_to "Remove", drum_path(drum) , method: :delete , class: "btn btn-danger btn-block" %>
 
 
   <% end %>
