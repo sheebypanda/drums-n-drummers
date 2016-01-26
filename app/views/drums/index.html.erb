@@ -1,0 +1,14 @@
+<h1 class="text-center">Drums list</h1>
+
+<div class="row">
+  <% @drums.each do |drum| %>
+    <% i =  cl_image_tag(drum.picture, :width => 70, :height => 70, class: "img-rounded") %>
+
+    <%= link_to i , drum_path(drum) %>
+
+
+  <% end %>
+</div>
+<div class="row">
+  <%= link_to "Add drum", new_drum_path, class: "btn btn-primary btn-block" %>
+</div>

@@ -1,4 +1,5 @@
 class DrummersController < ApplicationController
+
   def index
     @drummers = Drummer.all.order(updated_at: :desc)
   end
@@ -22,6 +23,8 @@ class DrummersController < ApplicationController
 
   def edit
     @drummer = Drummer.find(params[:id])
+    # @drums = Drum.find(drummer_id: params[:id])
+    @drum  = Drum.new
   end
 
   def update
@@ -37,6 +40,5 @@ class DrummersController < ApplicationController
     drummer.destroy
     redirect_to drummers_path
   end
-
 
 end

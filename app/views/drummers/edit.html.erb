@@ -12,6 +12,10 @@
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
     <!--  TODO assign drums-->
+    <%= simple_form_for @drum do |ff| %>
+      <%= ff.input :picture %>
+      <%= ff.button :submit , class: "btn-info btn-block" %>
+    <% end %>
   </div>
 </div>
 

@@ -1,7 +1,12 @@
 class DrumsController < ApplicationController
 
+  def index
+    @drums = Drum.all.order(updated_at: :desc)
+  end
+
   def show
     @drum = Drum.find(params[:id])
+    @drummer = Drummer.find(@drum[:id_drummer])
   end
 
   def new
