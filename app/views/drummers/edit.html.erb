@@ -1,15 +1,22 @@
 <h1>Edit</h1>
 
 <div class="row">
-  <%= simple_form_for @drummer do |f| %>
-    <%= f.input :name %>
-    <%= cl_image_tag(@drummer.picture) %>
-    <%= f.input :picture %>
+  <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+    <%= simple_form_for @drummer do |f| %>
+      <%= f.input :name %>
+      <%= cl_image_tag(@drummer.picture) %>
+      <%= f.input :picture %>
 
-    <%= f.button :submit , class: "btn-warning" %>
-  <% end %>
+      <%= f.button :submit , class: "btn-warning btn-block" %>
+    <% end %>
+  </div>
+  <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+    <!--  TODO assign drums-->
+  </div>
 </div>
 
 <div class="row">
-  <%= link_to "Remove", drummer_path(@drummer.id) , method: :delete , class: "btn btn-danger" %>
+  <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+    <%= link_to "Remove", drummer_path(@drummer.id) , method: :delete , class: "btn btn-danger btn-block" %>
+  </div>
 </div>

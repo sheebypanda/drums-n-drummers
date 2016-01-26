@@ -1,6 +1,6 @@
 class DrummersController < ApplicationController
   def index
-    @drummers = Drummer.all
+    @drummers = Drummer.all.order(updated_at: :desc)
   end
 
   def show
@@ -9,12 +9,12 @@ class DrummersController < ApplicationController
 
   def new
     @drummer = Drummer.new
+    @drum = Drum.new
   end
 
   def create
     drummer_params = params.require(:drummer).permit(:name, :picture)
-    drummer = Drummer.new(drummer_params)
-    drummer.save
+    drummer = Drummer.create(drummer_params)
     redirect_to drummers_path
     # redirect_to drummer_path(drummer)
     # redirect_to drummer_path(drummer.id)
