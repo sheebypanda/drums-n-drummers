@@ -1,5 +1,5 @@
 class Drummer < ActiveRecord::Base
-  validates :name, :picture, presence: true 
+  validates :name, presence: true, uniqueness: true
   has_many :drums
   mount_uploader :picture, PictureUploader
 end
