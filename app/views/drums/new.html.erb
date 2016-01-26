@@ -1,4 +1,4 @@
-<%= simple_form_for @drum do |f| %>
+<%= simple_form_for [@drummer, @drum], :html => {:multipart => true} do |f| %>
   <%= f.input :picture %>
   <%= f.association :drummer %>
   <%= f.button :submit , class: "btn-info btn-block" %>

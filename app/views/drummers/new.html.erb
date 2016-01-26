@@ -1,5 +1,5 @@
 <h1 class="text-center">Add a drummer</h1>
-<%= simple_form_for @drummer do |f| %>
+<%= simple_form_for @drummer, :html => {:multipart => true} do |f| %>
   <%= f.input :name %>
   <%= f.input :picture %>
   <%= f.button :submit, class: "btn-success"%>

@@ -15,7 +15,7 @@ class DrummersController < ApplicationController
 
   def create
     drummer_params = params.require(:drummer).permit(:name, :picture)
-    drummer = Drummer.create(drummer_params)
+    @drummer = Drummer.create(drummer_params)
     redirect_to drummers_path
     # redirect_to drummer_path(drummer)
     # redirect_to drummer_path(drummer.id)
