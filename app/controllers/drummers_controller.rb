@@ -23,7 +23,7 @@ class DrummersController < ApplicationController
 
   def edit
     @drummer = Drummer.find(params[:id])
-    # @drums = Drum.find(drummer_id: params[:id])
+    @drums = Drum.find_by(drummer_id: params[:id])
     @drum  = Drum.new
   end
 
