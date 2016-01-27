@@ -1,44 +1,43 @@
 class DrummersController < ApplicationController
+  before_action :set_drummer, only: [:show, :edit, :update, :destroy]
 
   def index
     @drummers = Drummer.all.order(updated_at: :desc)
   end
 
   def show
-    @drummer = Drummer.find(params[:id])
   end
 
   def new
     @drummer = Drummer.new
-    @drum = Drum.new
   end
 
   def create
-    drummer_params = params.require(:drummer).permit(:name, :picture)
     @drummer = Drummer.create(drummer_params)
-    redirect_to drummers_path
-    # redirect_to drummer_path(drummer)
-    # redirect_to drummer_path(drummer.id)
+    redirect_to drummer_path(@drummer)
   end
 
   def edit
-    @drummer = Drummer.find(params[:id])
-    @drums = Drum.find_by(drummer_id: params[:id])
-    @drum  = Drum.new
+    # @drums = Drum.find_by(drummer_id: params[:id])
   end
 
   def update
-    drummer_params = params.require(:drummer).permit(:name, :picture)
-    drummer = Drummer.find(params[:id])
-    drummer.update(drummer_params)
+    @drummer.update(drummer_params)
     redirect_to drummer_path
   end
 
-
   def destroy
-    drummer = Drummer.find(params[:id])
-    drummer.destroy
+    @drummer.destroy
     redirect_to drummers_path
   end
 
+  private
+
+  def set_drummer
+    @drummer = Drummer.find(params[:id])
+  end
+
+  def drummer_params
+    params.require(:drummer).permit(:name, :picture)
+  end
 end
