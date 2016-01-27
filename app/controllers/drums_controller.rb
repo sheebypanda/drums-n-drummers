@@ -15,7 +15,9 @@ class DrumsController < ApplicationController
 
   def create
     drum_params = params.require(:drum).permit(:drummer_id, :picture)
-    drum = Drum.create(drum_params)
+    drummer = Drummer.find_by(drummer_id: params[:id])
+    drummer.drums.create(drum_params)
+    # drum = Drum.create(drum_params)
     redirect_to drums_path
   end
 
