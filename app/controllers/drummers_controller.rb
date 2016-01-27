@@ -13,8 +13,11 @@ class DrummersController < ApplicationController
   end
 
   def create
-    @drummer = Drummer.create(drummer_params)
-    redirect_to drummer_path(@drummer)
+    @drummer = Drummer.new(drummer_params)
+    if @drummer.save
+      redirect_to drummer_path(@drummer)
+    else
+      render :new
   end
 
   def edit

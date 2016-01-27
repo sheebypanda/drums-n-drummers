@@ -14,8 +14,8 @@ class DrumsController < ApplicationController
   end
 
   def create
-    drum_params = params.require(:drum).permit(:drummer_id, :picture)
-    drum = Drum.create(drum_params)
+    @drum = @drummer.drums.build(drum_params)
+    @drum.save
     redirect_to drums_path
   end
 
@@ -24,8 +24,6 @@ class DrumsController < ApplicationController
   end
 
   # def update
-  #   drummer_params = params.require(:drummer).permit(:name, :picture)
-  #   drummer = Drummer.find(params[:id])
   #   drummer.update(drummer_params)
   #   redirect_to drummer_path
   # end
@@ -35,6 +33,16 @@ class DrumsController < ApplicationController
     drum = Drum.find(params[:id])
     drum.destroy
     redirect_to drums_path
+  end
+
+  private
+
+  def drum_params
+    params.require(:drum).permit(:drummer_id, :picture)
+  end
+
+  def find_drummer
+    @drummer = Drummer.find(params[:id])
   end
 
 
