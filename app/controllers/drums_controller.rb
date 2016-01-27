@@ -13,7 +13,7 @@ class DrumsController < ApplicationController
   def create
     @drum = @drummer.drums.new(drum_params)
     @drum.save
-    redirect_to drums_path
+    redirect_to drummer_path
   end
   def edit
     @drum = Drum.find(params[:id])
