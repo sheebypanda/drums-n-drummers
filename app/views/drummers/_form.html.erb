@@ -1,0 +1,6 @@
+<%= simple_form_for @drummer, :html => {:multipart => true} do |f| %>
+  <%= f.input :name %>
+  <%= cl_image_tag(@drummer.picture) %>
+  <%= f.input :picture %>
+  <%= f.button :submit, class: "btn-success"%>
+<% end %>

@@ -1,14 +1,7 @@
-<h1>Edit</h1>
-
+<h1>Edit <%= @drummer.name %></h1>
 <div class="row">
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-    <%= simple_form_for @drummer, :html => {:multipart => true} do |f| %>
-      <%= f.input :name %>
-      <%= cl_image_tag(@drummer.picture) %>
-      <%= f.input :picture %>
-
-      <%= f.button :submit , class: "btn-warning btn-block" %>
-    <% end %>
+    <%= render 'form' %>
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
     <%= simple_form_for @drum, :html => {:multipart => true} do |ff| %>
