@@ -4,7 +4,7 @@
     <%= render 'form' %>
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-    <%= simple_form_for @drum, :html => {:multipart => true} do |ff| %>
+    <%= simple_form_for [ @drummer, @drum ] do |ff| %>
       <%= ff.input :picture %>
       <%= ff.button :submit , class: "btn-info btn-block" %>
     <% end %>
