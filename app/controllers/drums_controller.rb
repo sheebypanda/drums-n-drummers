@@ -30,6 +30,6 @@ class DrumsController < ApplicationController
     params.require(:drum).permit(:drummer_id, :picture)
   end
   def find_drummer
-    @drummer = Drummer.find(params[:id])
+    @drummer = Drummer.find(params[:drummer_id])
   end
 end
