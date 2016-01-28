@@ -1,5 +1,5 @@
 class DrummersController < ApplicationController
-  before_action :set_drummer, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_drummer, only: [ :new, :show, :edit, :update, :destroy ]
 
   def index
     @drummers = Drummer.all.order(updated_at: :desc)
