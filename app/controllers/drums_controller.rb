@@ -1,5 +1,5 @@
 class DrumsController < ApplicationController
-  before_action :find_drummer, only: [ :create, :show, :edit, :update ]
+  before_action :find_drummer, only: [ :index, :create, :show, :edit, :update ]
   def index
     @drums = Drum.all.order(updated_at: :desc)
   end
@@ -13,10 +13,7 @@ class DrumsController < ApplicationController
   def create
     @drum = @drummer.drums.new(drum_params)
     @drum.save
-    redirect_to drummer_drums_path(@drummer)
-  end
-  def edit
-    @drum = Drum.find(params[:id])
+    redirect_to edit_drummer_path(@drummer)
   end
   def destroy
     drum = Drum.find(params[:id])

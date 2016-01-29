@@ -1,5 +1,5 @@
 class DrummersController < ApplicationController
-  before_action :set_drummer, only: [ :new, :show, :edit, :update, :destroy ]
+  before_action :set_drummer, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @drummers = Drummer.all.order(updated_at: :desc)
@@ -22,7 +22,7 @@ class DrummersController < ApplicationController
   end
   def update
     @drummer.update(drummer_params)
-    redirect_to drummer_path
+    redirect_to drummers_path
   end
   def destroy
     @drummer.destroy
@@ -35,6 +35,6 @@ class DrummersController < ApplicationController
     @drummer = Drummer.find(params[:id])
   end
   def drummer_params
-    @params.require(:drummer).permit(:name, :picture)
+    params.require(:drummer).permit(:name, :picture)
   end
 end

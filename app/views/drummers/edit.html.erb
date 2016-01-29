@@ -1,9 +1,14 @@
 <h1>Edit <%= @drummer.name %></h1>
 <div class="row">
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+    <h2>Drummer</h2>
+    <%= cl_image_tag(@drummer.picture) %>
     <%= render 'form' %>
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+    <h2>Drums</h2>
+
+    TODO : Add Drum list owned by drummer
     <%= simple_form_for [ @drummer, @drum ] do |f| %>
       <%= f.input :picture %>
       <%= f.button :submit , class: "btn-info btn-block" %>
