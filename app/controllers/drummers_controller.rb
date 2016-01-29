@@ -12,8 +12,10 @@ class DrummersController < ApplicationController
   def create
     @drummer = Drummer.new(drummer_params)
     if @drummer.save
+      #flash [ :notice ] = "Drummer #{@drummer . name} has been created"
       redirect_to edit_drummer_path(@drummer)
     else
+      #flash [ :alert ] = "Error : Drummer not created"
       render :new
     end
   end

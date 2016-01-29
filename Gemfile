@@ -19,7 +19,7 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'figaro'
-
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'

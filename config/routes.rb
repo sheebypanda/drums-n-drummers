@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "drummer#index"
   get '/', to: 'drummers#index'
   resources :drummers do
     resources :drums, only: [:new, :create, :index, :destroy, :show]
