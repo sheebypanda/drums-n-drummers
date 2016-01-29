@@ -2,22 +2,27 @@
 <div class="row">
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
     <h2>Drummer</h2>
-    <%= cl_image_tag(@drummer.picture) %>
-    <%= render 'form' %>
+    <%= cl_image_tag(@drummer.picture, :crop => :thumb, :gravity => :face, :radius => :max) %>
+    <%= render 'drummer_form' %>
+
+    <h3>Assignate a new drum</h3>
+    <%= simple_form_for [ @drummer, @drum ] do |f| %>
+    <%= f.input :picture %>
+    <%= f.button :submit , class: "btn-info btn-block" %>
+    <% end %>
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
     <h2>Drums</h2>
-
-    TODO : Add Drum list owned by drummer
-    <%= simple_form_for [ @drummer, @drum ] do |f| %>
-      <%= f.input :picture %>
-      <%= f.button :submit , class: "btn-info btn-block" %>
+    <%= @drums.each do |drum|  %>
+      <%= cl_image_tag(drum.picture) %>
+      <%= link_to "Remove Drum", drum_path(drum) , method: :delete , class: "btn btn-danger btn-block" %>
     <% end %>
+
   </div>
 </div>
 
 <div class="row">
-  <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-    <%= link_to "Remove", drummer_path(@drummer.id) , method: :delete , class: "btn btn-danger btn-block" %>
+  <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+    <%= link_to "Remove "+@drummer.name, drummer_path(@drummer.id) , method: :delete , class: "btn btn-danger btn-block" %>
   </div>
 </div>

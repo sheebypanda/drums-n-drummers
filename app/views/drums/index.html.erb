@@ -1,8 +1,8 @@
 <h1 class="text-center">Drums list</h1>
 
 <div class="row">
-  <%= @drums.each do |drum| %>
-    <%= cl_image_tag(drum.picture, :width => 70, :height => 70, class: "img-rounded") %>
+  <% @drums.each do |drum| %>
+    <%= cl_image_tag(drum.picture, :width => 80, :height => 80, class: "img-rounded") %>
     <%= link_to "Remove", drum_path(drum) , method: :delete , class: "btn btn-danger btn-block" %>
   <% end %>
 </div>

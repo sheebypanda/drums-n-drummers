@@ -1,23 +1,32 @@
 <h1 class="text-center">Drummers list</h1>
 
-<div class="row">
-  <% @drummers.each do |drummer| %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Nn Drums</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @drummers.each do |drummer| %>
+      <tr>
+        <td><%= cl_image_tag(drummer.picture, :width => 80, :height => 80,
+          :crop => :thumb, :gravity => :face, :radius => :max, class: "media-object") %></td>
+        <td><h3><%= link_to drummer.name , edit_drummer_path(drummer) %></h3></td>
+        <td><%= drummer.drums.count %> drum(s)</td>
+        <td><%= link_to icon('edit'), edit_drummer_path(drummer), class: "btn btn-info btn-block" %></td>
+        <td><%= link_to icon('trash'), drummer_path(drummer),
+        method: :delete,
+        data: { confirm: "Are you sure?" },
+        class: "btn btn-danger btn-block" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-  <div class="media">
-    <div class="media-left">
-      <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
-        :crop => :thumb, :gravity => :face, :radius => :max,
-        class: "media-object") %>
-    </div>
-    <div class="media-body">
-      <h3 class="media-heading"><%= link_to drummer.name , edit_drummer_path(drummer) %></h3>
-      <p><%= drummer.updated_at %></p>
-
-    </div>
-  </div>
-
-  <% end %>
-</div>
 <div class="row">
   <%= link_to "Add drummer", new_drummer_path, class: "btn btn-primary btn-block" %>
 </div>

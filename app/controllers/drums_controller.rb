@@ -18,7 +18,7 @@ class DrumsController < ApplicationController
   def destroy
     drum = Drum.find(params[:id])
     drum.destroy
-    redirect_to drums_path
+    redirect_to drummer_path
   end
 
   private
