@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
     <h2>Drummer</h2>
-    <%= cl_image_tag(@drummer.picture, :crop => :thumb, :gravity => :face, :radius => :max) %>
+    <%= cl_image_tag(@drummer.picture, :width => 100, :height => 100, :crop => :thumb, :gravity => :face, :radius => :max) %>
     <%= render 'drummer_form' %>
 
     <h3>Assignate a new drum</h3>
