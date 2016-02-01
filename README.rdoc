@@ -1,28 +1,18 @@
-== README
+# Drums and Drummers
+Still a work in progress...
+## Purpose
+Simple game for nerds drummers :
+ * 10 pictures of drums
+ * For each, associate their drummer from 3 drummer propositions.
+ * Display you score at the end.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## What is already done ?
+* Data relation
+* Models
+* Controllers
+* Administration views
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## TODO
+ * Add public view. (The real game)
+ * May add a music category selection.
