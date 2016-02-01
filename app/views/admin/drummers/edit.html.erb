@@ -14,14 +14,16 @@
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
     <h2>Drums</h2>
     <% @drums.each do |drum|  %>
-      <%= cl_image_tag(drum.picture, class: "img-responsive") %>
-      <%= link_to icon('trash') + " Remove Drum", drum_path(drum) , method: :delete , class: "btn btn-danger btn-block" %>
+      <div class="form-group">
+        <%= cl_image_tag(drum.picture, class: "img-responsive img-thumbnail") %>
+        <%= link_to icon('trash') + " Remove Drum", drum_path(drum) , method: :delete , class: "btn btn-danger btn-block" %>
+      </div>
     <% end %>
   </div>
 </div>
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-    <%= link_to "Remove "+@drummer.name, drummer_path(@drummer.id) , method: :delete , class: "btn btn-danger btn-block" %>
+    <%= link_to icon('trash') + " Remove "+@drummer.name, drummer_path(@drummer.id) , method: :delete , class: "btn btn-danger btn-block" %>
   </div>
 </div>

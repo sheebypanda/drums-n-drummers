@@ -1,4 +1,4 @@
-class DrumsController < ApplicationController
+class Admin::DrumsController < ApplicationController
   before_action :find_drummer, only: [ :index, :create, :show, :edit, :update ]
   def index
     @drums = Drum.all.order(updated_at: :desc)
