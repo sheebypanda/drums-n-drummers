@@ -12,10 +12,10 @@ class DrummersController < ApplicationController
   def create
     @drummer = Drummer.new(drummer_params)
     if @drummer.save
-      flash [ :notice ] = "Drummer #{@drummer . name} has been created"
+      flash[:notice] = "Drummer #{@drummer . name} has been successfully created"
       redirect_to edit_drummer_path(@drummer)
     else
-      flash [ :alert ] = "Error : Drummer not created"
+      flash[:alert] = "Error : Drummer not created"
       render :new
     end
   end
@@ -25,10 +25,12 @@ class DrummersController < ApplicationController
   end
   def update
     @drummer.update(drummer_params)
+    flash[:notice] = "Drummer #{@drummer . name} has been successfully updated"
     redirect_to drummers_path
   end
   def destroy
     @drummer.destroy
+    flash[:notice] = "Drummer #{@drummer . name} has been successfully deleted"
     redirect_to drummers_path
   end
 

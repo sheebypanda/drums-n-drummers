@@ -14,8 +14,8 @@
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
     <h2>Drums</h2>
     <%= @drums.each do |drum|  %>
-      <%= cl_image_tag(drum.picture, :width => 500,) %>
-      <%= link_to "Remove Drum", drum_path(drum) , method: :delete , class: "btn btn-danger btn-block" %>
+      <%= cl_image_tag(drum.picture, :width => 500) %>
+      <%= link_to "#{icon(trash)} Remove Drum", drum_path(drum) , method: :delete , class: "btn btn-danger btn-block" %>
     <% end %>
 
   </div>

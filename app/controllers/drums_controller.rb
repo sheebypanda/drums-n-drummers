@@ -13,11 +13,13 @@ class DrumsController < ApplicationController
   def create
     @drum = @drummer.drums.new(drum_params)
     @drum.save
+    flash[:notice] = "Drum successfully assigned to  #{@drummer . name}"
     redirect_to edit_drummer_path(@drummer)
   end
   def destroy
     drum = Drum.find(params[:id])
     drum.destroy
+    flash[:notice] = "Drum successfully deleted"
     redirect_to edit_drummer_path(drum.drummer)
   end
 
