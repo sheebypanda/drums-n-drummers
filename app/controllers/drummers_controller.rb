@@ -32,6 +32,8 @@ class DrummersController < ApplicationController
     flash[:notice] = "Drummer #{@drummer . name} has been successfully deleted"
     redirect_to drummers_path
   end
+  def play
+  end
 
   private
 

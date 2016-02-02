@@ -1,5 +1,5 @@
 class DrumsController < ApplicationController
-  before_action :find_drummer, only: [ :index, :create, :show, :edit, :update ]
+  before_action :find_drummer, only: :create
 
   def create
     @drum = @drummer.drums.new(drum_params)
