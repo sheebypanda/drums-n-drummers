@@ -1,4 +1,4 @@
-class Admin::DrummersController < ApplicationController
+class DrummersController < ApplicationController
   before_action :set_drummer, only: [ :show, :edit, :update, :destroy ]
 
   def index

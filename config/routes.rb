@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :admin do
+  scope '/admin' do
     root to: "drummer#index"
     get '/', to: 'drummers#index'
     resources :drummers do
