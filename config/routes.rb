@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope '/admin' do
-    root to: "drummer#index"
-    get '/', to: 'drummers#index'
+    #root "drummer#index"
+    #get '/', to: 'drummers#index'
     resources :drummers do
       resources :drums, only: [:new, :create, :index, :destroy, :show]
     end

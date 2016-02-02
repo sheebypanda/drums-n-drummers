@@ -1,15 +1,6 @@
 class DrumsController < ApplicationController
   before_action :find_drummer, only: [ :index, :create, :show, :edit, :update ]
-  def index
-    @drums = Drum.all.order(updated_at: :desc)
-  end
-  def show
-    @drum = Drum.find(params[:id])
-    @drummer = Drummer.find(@drum.drummer_id)
-  end
-  def new
-    @drum = Drum.new
-  end
+
   def create
     @drum = @drummer.drums.new(drum_params)
     @drum.save
