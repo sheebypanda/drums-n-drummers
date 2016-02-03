@@ -1,5 +1,18 @@
 <% @drums.each do |drum|  %>
-  <div class="wrapper">
-    <%= cl_image_tag(drum.picture, class: "image-bg") %>
+  <div class="row wrapper">
+    <%= cl_image_tag(drum.picture, width: 800, class: "image-bg") %>
+    <h3 class="btn btn-primary">
+      <%= drum.drummer.name %>
+      <%= cl_image_tag(drum.drummer.picture, :width => 70, :height => 70,
+        :crop => :thumb, :gravity => :face, :radius => :max, class: "image-bg") %>
+    </h3>
+    <% drummers = Drummer.where.not(id: drum.drummer).limit(2).order("RANDOM()") %>
+    <% drummers.each do |drummer| %>
+      <h3 class="btn btn-primary">
+        <%= drum.drummer.name %>
+        <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
+          :crop => :thumb, :gravity => :face, :radius => :max, class: "image-bg") %>
+      </h3>
+    <% end %>
   </div>
 <% end %>
