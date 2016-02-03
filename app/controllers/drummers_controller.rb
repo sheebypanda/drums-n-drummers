@@ -33,6 +33,7 @@ class DrummersController < ApplicationController
     redirect_to drummers_path
   end
   def play
+    @drums = Drum.limit(3).order("RANDOM()")
   end
 
   private
