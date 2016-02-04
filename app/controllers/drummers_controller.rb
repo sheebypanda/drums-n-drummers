@@ -1,6 +1,6 @@
 class DrummersController < ApplicationController
   before_action :set_drummer, only: [ :edit, :update, :destroy ]
-  http_basic_authenticate_with name: ENV['admin_name'], password: ENV['admin_secret'], except: :index
+  http_basic_authenticate_with name: ENV['admin_name'], password: ENV['admin_secret'], except: :play
 
   def index
     @drummers = Drummer.all.order(updated_at: :desc)
