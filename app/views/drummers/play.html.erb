@@ -1,18 +1,24 @@
-<% @drums.each do |drum|  %>
-  <div class="row wrapper">
+<section class="container">
+  <% @drums.each do |drum|  %>
+    <h2 class="text-center">Whose drum is that ?</h2>
+
     <%= cl_image_tag(drum.picture, width: 800, class: "image-bg") %>
-    <h3 class="btn btn-default">
-      <%= drum.drummer.name %>
-      <%= cl_image_tag(drum.drummer.picture, :width => 70, :height => 70,
-        :crop => :thumb, :gravity => :face, :radius => :max) %>
-    </h3>
-    <% drummers = Drummer.where.not(id: drum.drummer).limit(2).order("RANDOM()") %>
-    <% drummers.each do |drummer| %>
+    <div class="row">
       <h3 class="btn btn-default">
-        <%= drummer.name %>
-        <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
+        <%= drum.drummer.name %>
+        <%= cl_image_tag(drum.drummer.picture, :width => 70, :height => 70,
           :crop => :thumb, :gravity => :face, :radius => :max) %>
       </h3>
-    <% end %>
-  </div>
-<% end %>
+      <% drummers = Drummer.where.not(id: drum.drummer).limit(2).order("RANDOM()") %>
+      <% drummers.each do |drummer| %>
+        <h3 class="btn btn-default">
+          <%= drummer.name %>
+          <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
+            :crop => :thumb, :gravity => :face, :radius => :max) %>
+        </h3>
+      <% end %>
+    </div>
+
+
+  <% end %>
+</div>

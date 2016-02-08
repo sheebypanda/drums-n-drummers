@@ -3,16 +3,18 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  background-color: #772953;
+  color:white;
 }
 header#welcome {
   height: 100vh;
 }
 
 img.image-bg {
+  width: 70vw;
+  height: 70vh;
   display: block;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+  margin: 0 auto;
 }
 
 h1.brand {
@@ -21,13 +23,15 @@ h1.brand {
   font-weight: bold;
 }
 
-h2.brand {
+h2 {
   font-size: 50px;
   margin: 50px;
 }
 
 div.welcome {
   margin-top: 30vh;
-  background: url('http://res.cloudinary.com/dkplmgvom/image/upload/e_blur/v1454921764/traps_big_hhoqbh.jpg');
-  object-fit: cover;
+}
+
+div.welcomebg {
+  height:100%;
 }
