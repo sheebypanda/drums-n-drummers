@@ -28,4 +28,6 @@ h2.brand {
 
 div.welcome {
   margin-top: 30vh;
+  background: url('http://res.cloudinary.com/dkplmgvom/image/upload/e_blur/v1454921764/traps_big_hhoqbh.jpg');
+  object-fit: cover;
 }

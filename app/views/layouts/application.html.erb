@@ -8,12 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-  <%= render 'shared/welcome' %>
+  <div class="container">
 
-  <%= render 'shared/flash' %>
+    <%= render 'shared/welcome' %>
 
-  <%= yield %>
+    <%= render 'shared/flash' %>
 
+    <%= yield %>
+    
+  </div>
 </body>
 </html>
