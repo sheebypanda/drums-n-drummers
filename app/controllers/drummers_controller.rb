@@ -36,7 +36,7 @@ class DrummersController < ApplicationController
   end
   def play
     set_game
-    @lvl = 0
+    @lvl = 1
   end
   def check
     set_game
@@ -50,6 +50,7 @@ class DrummersController < ApplicationController
       render 'play'
     else
       @lvl = lvl.to_s
+      @drum = drum
       render 'loose'
     end
   end
