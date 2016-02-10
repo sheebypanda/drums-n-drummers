@@ -1,24 +1,30 @@
 <section class="container">
-  <% @drums.each do |drum|  %>
+  <div class="row">
     <h2 class="text-center">Whose drum is that ?</h2>
+  </div>
 
-    <%= cl_image_tag(drum.picture, width: 800, class: "image-bg") %>
-    <div class="row">
-      <h3 class="btn btn-default">
-        <%= drum.drummer.name %>
-        <%= cl_image_tag(drum.drummer.picture, :width => 70, :height => 70,
-          :crop => :thumb, :gravity => :face, :radius => :max) %>
-      </h3>
-      <% drummers = Drummer.where.not(id: drum.drummer).limit(2).order("RANDOM()") %>
-      <% drummers.each do |drummer| %>
-        <h3 class="btn btn-default">
-          <%= drummer.name %>
-          <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
-            :crop => :thumb, :gravity => :face, :radius => :max) %>
-        </h3>
-      <% end %>
+  <div class="row">
+    <%= cl_image_tag(@drum.first.picture, width: 800, class: "image-bg") %>
+  </div>
+
+  <%= form_tag('/check') %>
+
+    <div class="row text-center">
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <% @drummers.each do |drummer| %>
+          <h3 class="btn btn-default">
+            <%= drummer.name %>
+            <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
+              :crop => :thumb, :gravity => :face, :radius => :max) %>
+          </h3>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <%= submit_tag "Validate", class: "btn btn-primary"    %>
     </div>
 
 
-  <% end %>
-</div>
+
+</section>

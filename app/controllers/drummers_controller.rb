@@ -1,6 +1,6 @@
 class DrummersController < ApplicationController
   before_action :set_drummer, only: [ :edit, :update, :destroy ]
-  http_basic_authenticate_with name: ENV['admin_name'], password: ENV['admin_secret'], except: :play
+  http_basic_authenticate_with name: ENV['admin_name'], password: ENV['admin_secret'], except: [:play, :welcome]
 
   def index
     @drummers = Drummer.all.order(updated_at: :desc)
@@ -32,8 +32,17 @@ class DrummersController < ApplicationController
     flash[:notice] = "Drummer #{@drummer . name} has been successfully deleted"
     redirect_to drummers_path
   end
+  def welcome
+  end
   def play
-    @drums = Drum.limit(3).order("RANDOM()")
+    @drum = Drum.limit(1).order("RANDOM()")
+    @drummers = Drummer.where.not(id: @drum.first.drummer_id).limit(2).order("RANDOM()")
+    @drummers << @drum.first.drummer
+    @drummers = @drummers.shuffle
+    @lvl = 0
+  end
+  def check
+    redirect_to '/play'
   end
 
   private

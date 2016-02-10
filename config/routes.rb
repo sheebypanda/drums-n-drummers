@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :drums
   end
 
-  get '/', to: 'drummers#play'
+  get '/', to: 'drummers#welcome'
+  get '/play', to: 'drummers#play'
+  post '/check', to: 'drummers#check'
 
 end

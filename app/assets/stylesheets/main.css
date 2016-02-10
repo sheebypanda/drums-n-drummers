@@ -3,16 +3,15 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #772953;
-  color:white;
+  /*background-color: #772953;*/
+  /*color:white;*/
 }
 header#welcome {
   height: 100vh;
 }
 
 img.image-bg {
-  width: 70vw;
-  height: 70vh;
+  width: 80vw;
   display: block;
   margin: 0 auto;
 }
