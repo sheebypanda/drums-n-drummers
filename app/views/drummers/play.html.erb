@@ -1,6 +1,6 @@
 <section class="container">
   <div class="row">
-    <h2 class="text-center">Whose drum is that ?</h2>
+    <h2 class="text-center">Whose drum is that ?<small>Level : <%= @lvl %></small></h2>
   </div>
 
   <div class="row">
@@ -9,10 +9,13 @@
 
   <%= form_tag('/check') %>
 
+  <%= hidden_field_tag 'drum', @drum.first.id %>
+
     <div class="row text-center">
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <% @drummers.each do |drummer| %>
           <h3 class="btn btn-default">
+            <%= radio_button_tag 'id', drummer.id %>
             <%= drummer.name %>
             <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
               :crop => :thumb, :gravity => :face, :radius => :max) %>
@@ -22,6 +25,7 @@
     </div>
 
     <div class="row text-center">
+
       <%= submit_tag "Validate", class: "btn btn-primary"    %>
     </div>
 
