@@ -1,8 +1,7 @@
-<h1>Edit <%= @drummer.name %></h1>
+<h1 class="text-center">Edit  <%= @drummer.name %></h1>
 <div class="row">
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-    <h2>Drummer</h2>
-    <%= cl_image_tag(@drummer.picture, :width => 100, :height => 100, :crop => :thumb, :gravity => :face, :radius => :max) %>
+    <%= cl_image_tag(@drummer.picture, :width => 200, :height => 200, :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle") %>
     <%= render 'drummer_form' %>
 
     <h3>Assignate a new drum</h3>
@@ -12,7 +11,6 @@
     <% end %>
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-    <h2>Drums</h2>
     <% @drums.each do |drum|  %>
       <div class="form-group">
         <%= cl_image_tag(drum.picture, class: "img-responsive img-thumbnail") %>

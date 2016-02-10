@@ -3,17 +3,9 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  /*background-color: #772953;*/
-  /*color:white;*/
-}
-header#welcome {
+  background-color: #772953;
+  color:white;
   height: 100vh;
-}
-
-img.image-bg {
-  width: 80vw;
-  display: block;
-  margin: 0 auto;
 }
 
 h1.brand {
@@ -33,4 +25,13 @@ div.welcome {
 
 div.welcomebg {
   height:100%;
+}
+
+.drum {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+a, a:hover {
+  color: white;
 }

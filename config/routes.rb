@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get '/', to: 'drummers#welcome'
   get '/play', to: 'drummers#play'
+  get '/check', to: 'drummers#welcome'
   post '/check', to: 'drummers#check'
+  get '/loose', to: 'drummers#loose'
+
+  get '/admin', to: 'drummers#index'
 
 end

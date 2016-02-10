@@ -1,5 +1,9 @@
 <h1 class="text-center">Drummers list</h1>
 
+<div class="row">
+  <%= link_to icon('plus') + " Add drummer", new_drummer_path, class: "btn btn-primary btn-block" %>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -15,7 +19,7 @@
     <% @drummers.each do |drummer| %>
       <tr>
         <td><%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
-          :crop => :thumb, :gravity => :face, :radius => :max) %></td>
+          :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle") %></td>
         <td><h3><%= link_to drummer.name , edit_drummer_path(drummer) %></h3></td>
         <td><%= drummer.drums.count %></td>
         <td>
@@ -32,7 +36,3 @@
     <% end %>
   </tbody>
 </table>
-
-<div class="row">
-  <%= link_to icon('plus') + " Add drummer", new_drummer_path, class: "btn btn-primary btn-block" %>
-</div>

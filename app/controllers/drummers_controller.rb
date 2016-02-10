@@ -1,6 +1,6 @@
 class DrummersController < ApplicationController
   before_action :set_drummer, only: [ :edit, :update, :destroy ]
-  http_basic_authenticate_with name: ENV['admin_name'], password: ENV['admin_secret'], except: [:play, :check, :welcome]
+  http_basic_authenticate_with name: ENV['admin_name'], password: ENV['admin_secret'], except: [:play, :check, :loose, :welcome]
 
   def index
     @drummers = Drummer.all.order(updated_at: :desc)
@@ -35,26 +35,35 @@ class DrummersController < ApplicationController
   def welcome
   end
   def play
-    @drum = Drum.limit(1).order("RANDOM()")
-    @drummers = Drummer.where.not(id: @drum.first.drummer_id).limit(2).order("RANDOM()")
-    @drummers << @drum.first.drummer
-    @drummers = @drummers.shuffle
+    set_game
     @lvl = 0
   end
   def check
-    drummer_id = params[:id]
+    set_game
+    lvl = params[:lvl].to_i
+    drummer_id = params[:id].to_i
     drum_id = params[:drum]
     drum = Drum.find(drum_id)
-    if drummer_id == drum.drummer.id
-      @lvl += 1
+    if drummer_id == drum.drummer_id
+      lvl += 1
+      @lvl = lvl.to_s
+      render 'play'
     else
-      @lvl = 0
+      @lvl = lvl.to_s
+      render 'loose'
     end
-    redirect_to '/play'
+  end
+  def loose
   end
 
   private
 
+  def set_game
+    @drum = Drum.limit(1).order("RANDOM()")
+    @drummers = Drummer.where.not(id: @drum.first.drummer_id).limit(2).order("RANDOM()")
+    @drummers << @drum.first.drummer
+    @drummers = @drummers.shuffle
+  end
   def set_drummer
     @drummer = Drummer.find(params[:id])
   end
