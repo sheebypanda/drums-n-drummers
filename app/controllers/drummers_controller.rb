@@ -47,6 +47,7 @@ class DrummersController < ApplicationController
     if drummer_id == drum.drummer_id
       lvl += 1
       @lvl = lvl.to_s
+      flash[:notice] = "Well done !"
       render 'play'
     else
       @lvl = lvl.to_s

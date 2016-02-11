@@ -1,13 +1,13 @@
-<div class="row">
-  <h2 class="text-center">Whose drum is that ? <small>Level : <%= @lvl %></small></h2>
-</div>
+<h2 class="center">Whose drum is that ?</h2>
 
+<h3 class="center"><span class="label label-pill label-primary center">Level : <%= @lvl %></span></h3>
+<progress class="progress" value="<%= @lvl %>" max="100"><%= @lvl %>%</progress>
 <div class="row drum">
   <%= cl_image_tag(@drum.first.picture, width: 500, class: "img-thumbnail") %>
 </div>
 
 
-<div class="row text-center">
+<div class="row center">
   <%= form_tag('/check') %>
 
   <%= hidden_field_tag 'lvl', @lvl %>
@@ -15,15 +15,15 @@
 
   <div class="btn-group form-group" data-toggle="buttons">
     <% @drummers.each do |drummer| %>
-      <label class="btn btn-default">
-        <%= radio_button_tag 'id', drummer.id, class: "btn btn-default" %>
-        <%= drummer.name %>
-        <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
+      <label class="btn btn-primary">
+        <%= cl_image_tag(drummer.picture, :width => 90, :height => 90,
               :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle") %>
+        <%= radio_button_tag 'id', drummer.id %>
+        <p class="card-text"><%= drummer.name %></p>
       </label>
     <% end %>
   </div>
   <div class="form-group">
-    <%= submit_tag "OK", class: "btn btn-primary btn-lg"    %>
+    <%= submit_tag "Confirm", class: "btn btn-primary btn-lg"    %>
   </div>
 </div>
