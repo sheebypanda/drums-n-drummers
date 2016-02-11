@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -25,6 +24,11 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'figaro'
+
+gem 'rails_12factor', group: :production
+gem 'puma',           group: :production
+
+
 
 group :development, :test do
   gem 'byebug'

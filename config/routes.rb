@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/loose', to: 'drummers#loose'
 
   get '/admin', to: 'drummers#index'
+  root 'drummers#welcome'
 
 end
