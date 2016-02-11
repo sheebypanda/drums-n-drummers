@@ -12,7 +12,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bootstrap-sass'
+gem 'sprockets-rails'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+
 gem 'simple_form'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'

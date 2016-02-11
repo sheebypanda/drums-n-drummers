@@ -47,9 +47,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+    bootstrap (4.0.0.alpha3)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.2)
     byebug (8.2.1)
     carrierwave (0.10.0)
@@ -183,7 +183,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   better_errors
-  bootstrap-sass
+  bootstrap (~> 4.0.0.alpha3)
   byebug
   carrierwave
   cloudinary
@@ -198,6 +198,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simple_form
   spring
+  sprockets-rails
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
