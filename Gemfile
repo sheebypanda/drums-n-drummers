@@ -15,6 +15,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 gem 'simple_form'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'

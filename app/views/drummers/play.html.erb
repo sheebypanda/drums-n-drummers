@@ -19,7 +19,7 @@
         <%= cl_image_tag(drummer.picture, :width => 90, :height => 90,
               :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle") %>
         <%= radio_button_tag 'id', drummer.id %>
-        <p class="card-text"><%= drummer.name %></p>
+        <p><%= drummer.name %></p>
       </label>
     <% end %>
   </div>

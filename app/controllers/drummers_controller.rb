@@ -52,6 +52,7 @@ class DrummersController < ApplicationController
     else
       @lvl = lvl.to_s
       @drum = drum
+      flash[:alert] = "Miss..."
       render 'loose'
     end
   end
