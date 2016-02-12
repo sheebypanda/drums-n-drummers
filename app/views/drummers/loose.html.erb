@@ -1,14 +1,15 @@
+<h1 class="center"><p class="label label-danger">Game Over</p></h1>
 <h2 class="center">Final score : <%= @lvl %></h2>
 
 <div class="row drum">
   <%= cl_image_tag(@drum.picture, width: 500, class: "img-thumbnail") %>
 </div>
-
-<h3 class="center">
+<h4 class="center">Good answer : </h4>
+  <p class="center">
   <%= cl_image_tag(@drum.drummer.picture, :width => 70, :height => 70,
-      :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle") %>
-  <p><%= @drum.drummer.name %></p>
-</h3>
+      :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle center") %>
+  </p>
+<h3 class="center"><p class="label label-pill label-primary"><%= @drum.drummer.name %></p></h3>
 
 <div class="center">
   <%= link_to icon('reply') + " Retry", '/play', class: "btn btn-primary btn-lg" %>
