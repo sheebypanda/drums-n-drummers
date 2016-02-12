@@ -15,7 +15,7 @@
     <% @drummers.each do |drummer| %>
       <label class="btn btn-secondary">
         <%= cl_image_tag(drummer.picture, :width => 90, :height => 90,
-              :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle") %>
+              :crop => :thumb, :gravity => :face, :radius => :max, :effect => "saturation:-100", class: "img-circle") %>
         <%= radio_button_tag 'id', drummer.id %>
         <p><%= drummer.name %></p>
       </label>
