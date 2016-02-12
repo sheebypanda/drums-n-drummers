@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #772953;
+  background-color: #5E2750;
   color:white;
   height: 100%;
   font-weight: 400;
@@ -19,7 +19,11 @@ h1 {
 
 h2{
   font-size: 32px;
-  margin: 10px;
+  margin: 0.7rem;
+}
+h3 {
+  margin: 0.5rem;
+  font-size: 23px;
 }
 
 div.welcome {
@@ -31,14 +35,31 @@ div.welcomebg {
   height:100%;
 }
 
-.drum {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
 a, a:hover {
   color: white;
 }
 .center {
   text-align: center;
+}
+.lvl {
+  margin-top: 1rem;
+}
+
+.label-primary, {
+  background-color: #DD4814;
+  border-color: #DD4814;
+}
+.btn-primary, .btn-primary:active, a, a:active, a:target{
+  background-color: #DD4814;
+  border-color: #DD4814;
+}
+progress.progress[value] {
+  color:#DD4814;
+}
+.btn-primary:hover {
+  background-color: #E05A2B;
+  border-color: #E05A2B;
+}
+.btn-primary.active:hover {
+  background-color: #C0461C;
 }
