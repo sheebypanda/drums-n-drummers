@@ -37,6 +37,7 @@ div.welcomebg {
 
 a, a:hover {
   color: white;
+  text-decoration: none;
 }
 .center {
   text-align: center;
@@ -49,12 +50,12 @@ a, a:hover {
   background-color: #DD4814;
   border-color: #DD4814;
 }
-.btn-primary, .btn-primary:active, a, a:active, a:target{
+.btn-primary, .btn-primary:active, .btn-primary.focus, .btn-primary.active, .btn-primary:focus{
   background-color: #DD4814;
   border-color: #DD4814;
 }
-progress.progress[value] {
-  color:#DD4814;
+.progress-warning {
+  background-color: #DD4814;
 }
 .btn-primary:hover {
   background-color: #E05A2B;

@@ -1,6 +1,6 @@
-<h1 class="text-center">Drummers list</h1>
+<h1 class="center">Drummers list</h1>
 
-<div class="row">
+<div class="row form-group">
   <%= link_to icon('plus') + " Add drummer", new_drummer_path, class: "btn btn-primary btn-block" %>
 </div>
 
@@ -11,7 +11,6 @@
       <th>Name</th>
       <th>Nn Drums</th>
       <th>Drums</th>
-      <th>Update</th>
       <th>Delete</th>
     </tr>
   </thead>
@@ -20,18 +19,17 @@
       <tr>
         <td><%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
           :crop => :thumb, :gravity => :face, :radius => :max, class: "img-circle") %></td>
-        <td><h3><%= link_to drummer.name , edit_drummer_path(drummer) %></h3></td>
+        <td><h3 class="btn btn-primary"><%= link_to drummer.name , edit_drummer_path(drummer) %></h3></td>
         <td><%= drummer.drums.count %></td>
         <td>
             <% drummer.drums.each do |drum| %>
             <%= cl_image_tag(drum.picture, :width => 80, :height => 80, class: "img-rounded") %>
               <% end %>
         </td>
-        <td><%= link_to icon('pencil'), edit_drummer_path(drummer), class: "btn btn-info btn-block" %></td>
         <td><%= link_to icon('trash'), drummer_path(drummer),
         method: :delete,
         data: { confirm: "Are you sure?" },
-        class: "btn btn-danger btn-block" %></td>
+        class: "btn btn-primary btn-block" %></td>
       </tr>
     <% end %>
   </tbody>

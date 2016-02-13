@@ -3,7 +3,7 @@ class DrummersController < ApplicationController
   http_basic_authenticate_with name: ENV['admin_name'], password: ENV['admin_secret'], except: [:play, :check, :loose, :welcome]
 
   def index
-    @drummers = Drummer.all.order(updated_at: :desc)
+    @drummers = Drummer.all.order(name: :asc)
   end
   def new
     @drummer = Drummer.new
