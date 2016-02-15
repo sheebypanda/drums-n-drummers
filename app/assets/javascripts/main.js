@@ -1,6 +1,9 @@
-$(document).ready(function() {
-  $(".alert").delay( 1000 ).fadeOut( 500 );
-  $('label').click(function() {
-    $('submit').submit();
+var ready = function() {
+  $('label').on('change', function() {
+    $('form').submit();
   });
-});
+  $(".alert").delay( 1000 ).fadeOut( 500 );
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

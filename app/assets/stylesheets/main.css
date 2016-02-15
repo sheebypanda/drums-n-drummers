@@ -3,20 +3,27 @@
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #772953;
+  background-color: #5E2750;
   color:white;
   height: 100%;
+  font-weight: 400;
 }
 
-h1.brand {
-  font-family: 'Lato', sans-serif;
-  font-size: 80px;
-  font-weight: bold;
+h1, h2, h3{
+  font-weight: 300;
+  line-height: 1.3;
+}
+h1 {
+  font-size: 45px;
 }
 
 h2{
-  font-size: 50px;
-  margin: 20px;
+  font-size: 32px;
+  margin: 0.7rem;
+}
+h3 {
+  margin: 0.5rem;
+  font-size: 23px;
 }
 
 div.welcome {
@@ -28,14 +35,32 @@ div.welcomebg {
   height:100%;
 }
 
-.drum {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
 a, a:hover {
   color: white;
+  text-decoration: none;
 }
 .center {
   text-align: center;
+}
+.lvl {
+  margin-top: 1rem;
+}
+
+.label-primary, {
+  background-color: #DD4814;
+  border-color: #DD4814;
+}
+.btn-primary, .btn-primary:active, .btn-primary.focus, .btn-primary.active, .btn-primary:focus{
+  background-color: #DD4814;
+  border-color: #DD4814;
+}
+.progress-warning {
+  background-color: #DD4814;
+}
+.btn-primary:hover {
+  background-color: #E05A2B;
+  border-color: #E05A2B;
+}
+.btn-primary.active:hover {
+  background-color: #C0461C;
 }
