@@ -1,32 +1,35 @@
-<h2 class="center">Whose drum is that ?</h2>
+<h2 class="text-xs-center">Whose drum is that ?</h2>
 
-<h3 class="center"><span class="label label-pill label-primary center">Level : <%= @lvl %></span></h3>
-<div class="row">
+<h3 class="text-xs-center"><span class="label label-pill label-primary center">Level : <%= @lvl %></span></h3>
+
+<div class="row form-group">
   <div class="col-md-12">
     <%= cl_image_tag(@drum.first.picture, width: 500, class: "img-thumbnail img-fluid center-block") %>
   </div>
 </div>
 
-<%= form_tag('/check') %>
+<div class="row center" data-toggle="buttons">
+  <div class="col-xs-12">
+    <%= form_tag('/check') %>
+      <%= hidden_field_tag 'lvl', @lvl %>
+      <%= hidden_field_tag 'drum', @drum.first.id %>
 
-  <%= hidden_field_tag 'lvl', @lvl %>
-  <%= hidden_field_tag 'drum', @drum.first.id %>
+      <div class="btn-group" data-toggle="buttons">
+        <% @drummers.each do |drummer| %>
 
-  <div class="row" data-toggle="buttons">
-    <% @drummers.each do |drummer| %>
-    <div class="col-xs-4">
-      <label class="btn btn-secondary bt-sm">
-        <%= cl_image_tag(drummer.picture, :width => 60, :height => 60,
-              :crop => :thumb, :gravity => :face, :radius => :max, :effect => "saturation:-100", class: "img-circle img-fluid center-block") %>
-        <%= radio_button_tag 'id', drummer.id %>
-        <p><%= drummer.name %></p>
-      </label>
-    </div>
-    <% end %>
+          <label class="btn btn-secondary btn-drummer">
+            <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
+                  :crop => :thumb, :gravity => :face, :radius => :max, :effect => "saturation:-100", class: "img-circle img-fluid center-block") %>
+            <%= radio_button_tag 'id', drummer.id %>
+            <p><%= drummer.name %></p>
+          </label>
+        <% end %>
+      </div>
   </div>
+</div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 lvl">
-    <progress class="progress progress-warning" value="<%= @lvl %>" max="100"><%= @lvl %>%</progress>
+    <progress class="progress" value="<%= @lvl %>" max="100"><%= @lvl %>%</progress>
   </div>
 </div>
