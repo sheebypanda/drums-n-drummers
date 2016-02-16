@@ -1,10 +1,10 @@
-<h2 class="text-xs-center">Whose drum is that ?</h2>
+<h2 class="text-xs-center">Whose drum is this ?</h2>
 
-<h3 class="text-xs-center"><span class="label label-pill label-primary center">Level : <%= @lvl %></span></h3>
+<h3 class="text-xs-center"><span class="label label-pill label-primary center animated flash">Level : <%= @lvl %></span></h3>
 
 <div class="row form-group">
   <div class="col-md-12">
-    <%= cl_image_tag(@drum.first.picture, width: 500, class: "img-thumbnail img-fluid center-block") %>
+    <%= cl_image_tag(@drum.first.picture, width: 500, class: "img-thumbnail img-fluid center-block animated fadeIn") %>
   </div>
 </div>
 
@@ -19,9 +19,9 @@
 
           <label class="btn btn-secondary btn-drummer">
             <%= cl_image_tag(drummer.picture, :width => 70, :height => 70,
-                  :crop => :thumb, :gravity => :face, :radius => :max, :effect => "saturation:-100", class: "img-circle img-fluid center-block") %>
+                  :crop => :thumb, :gravity => :face, :radius => :max, :effect => "saturation:-100", class: "img-circle img-fluid center-block animated fadeIn") %>
             <%= radio_button_tag 'id', drummer.id %>
-            <p><%= drummer.name %></p>
+            <p class="small"><%= drummer.name %></p>
           </label>
         <% end %>
       </div>
@@ -30,6 +30,6 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 lvl">
-    <progress class="progress" value="<%= @lvl %>" max="100"><%= @lvl %>%</progress>
+    <progress class="progress animated flipInX" value="<%= @lvl %>" max="30"><%= @lvl %>%</progress>
   </div>
 </div>

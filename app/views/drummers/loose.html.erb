@@ -1,17 +1,22 @@
-<h1 class="bg-danger text-xs-center">Game Over</h1>
+<h1 class="text-xs-center">Game Over</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 lvl">
+    <progress class="progress progress-danger animated flash" value="<%= @lvl %>" max="30"><%= @lvl %>%</progress>
+  </div>
+</div>
 
-<h3 class="center"><span class="label label-pill label-danger center">Level : <%= @lvl %></span></h3>
+<h3 class="center"><span class="label label-pill label-danger center animated flash">Level : <%= @lvl %></span></h3>
 <div class="row">
   <div class="col-md-12">
-    <%= cl_image_tag(@drum.picture, width: 500, class: "img-thumbnail img-fluid center-block") %>
+    <%= cl_image_tag(@drum.picture, width: 500, id: "img-loose", class: "img-thumbnail img-fluid center-block animated hinge") %>
   </div>
 </div>
 
 <h4 class="center">Good answer : </h4>
 
-<p class="center">
+<p class="center"  data-toggle="popover" data-content="Asshole !">
   <%= cl_image_tag(@drum.drummer.picture, :width => 70, :height => 70,
-    :crop => :thumb, :gravity => :face, :radius => :max, :effect => "saturation:-100", class: "img-circle center") %>
+    :crop => :thumb, :gravity => :face, :radius => :max, :effect => "saturation:-100", class: "img-circle center animated fadeIn") %>
 </p>
 
 <h3 class="center">
@@ -19,5 +24,5 @@
 </h3>
 
 <div class="center">
-  <%= link_to icon('reply') + " Retry", '/play', class: "btn btn-primary btn-lg" %>
+  <%= link_to icon('reply') + " Retry", '/play', class: "btn btn-danger btn-lg animated flash" %>
 </div>

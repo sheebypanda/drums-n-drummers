@@ -2,7 +2,13 @@ var ready = function() {
   $('label').on('change', function() {
     $('form').submit();
   });
-  $(".alert").delay( 1000 ).fadeOut( 500 );
+
+  $(function () {
+    $('[data-toggle="popover"]').popover({
+    container: 'img'
+  })
+  })
+
 };
 
 $(document).ready(ready);
