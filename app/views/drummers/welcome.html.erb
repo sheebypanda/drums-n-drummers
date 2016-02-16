@@ -1,11 +1,6 @@
-<header id="welcome">
-  <div class="welcome">
-    <div class="col-md-12">
-      <h1 class="brand">Drums and Drummers</h1>
-      <h2 class="brand">Are you a drums nerd ?</h2>
-
-      <%= link_to icon('gamepad') + " Test your knowledge", "/play", class: "btn btn-primary"  %>
-
-    </div>
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="display-3 text-xs-center mt">Do you <%= icon('heart', class: "text-danger") %> drums ?</h1>
   </div>
-</header>
+</div>
+<%= link_to icon('gamepad') + " Test your knowledge", "/play", class: "btn btn-primary btn-block btn-lg mt"  %>

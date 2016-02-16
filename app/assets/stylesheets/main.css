@@ -5,14 +5,13 @@ body {
   font-family: 'Ubuntu', sans-serif;
   background-color: #5E2750;
   color:white;
-  height: 100%;
   font-weight: 400;
 }
 
 h1, h2, h3{
   font-weight: 300;
-  line-height: 1.3;
 }
+
 h1 {
   font-size: 45px;
 }
@@ -26,15 +25,6 @@ h3 {
   font-size: 23px;
 }
 
-div.welcome {
-  margin-top: 25vh;
-  text-align: center;
-}
-
-div.welcomebg {
-  height:100%;
-}
-
 a, a:hover {
   color: white;
   text-decoration: none;
@@ -45,22 +35,6 @@ a, a:hover {
 .lvl {
   margin-top: 1rem;
 }
-
-.label-primary, {
-  background-color: #DD4814;
-  border-color: #DD4814;
-}
-.btn-primary, .btn-primary:active, .btn-primary.focus, .btn-primary.active, .btn-primary:focus{
-  background-color: #DD4814;
-  border-color: #DD4814;
-}
-.progress-warning {
-  background-color: #DD4814;
-}
-.btn-primary:hover {
-  background-color: #E05A2B;
-  border-color: #E05A2B;
-}
-.btn-primary.active:hover {
-  background-color: #C0461C;
+.mt {
+  margin-top: 15%;
 }
