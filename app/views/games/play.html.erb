@@ -33,3 +33,11 @@
     <progress class="progress animated flipInX" value="<%= @lvl %>" max="30"><%= @lvl %>%</progress>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 lvl">
+    <label class="btn btn-secondary btn-drummer">
+      <%= check_box_tag 'jocker', @jocker %>
+      <p class="small"><%= icon('repeat') + @jocker %>Jocker</p>
+    </label>
+  </div>
+</div>

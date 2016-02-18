@@ -7,13 +7,18 @@ class GamesController < ApplicationController
   end
   def play
     @lvl = 1
+    @jocker = 1
   end
   def check
     lvl = params[:lvl].to_i
+    jocker = params[:jocker].to_i
     drummer_id = params[:id].to_i
     drum_id = params[:drum]
     drum = Drum.find(drum_id)
-    if drummer_id == drum.drummer_id
+    if jocker > 0
+      @jocker = jocker
+      render 'play'
+    elsif drummer_id == drum.drummer_id
       lvl += 1
       @lvl = lvl.to_s
       flash.now[:notice] = "Well done !"
