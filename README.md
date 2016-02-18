@@ -1,18 +1,14 @@
 # Drums and Drummers
-Still a work in progress...
+### Simple game for nerds drummers
+Still a work in progress.
+You can fork it and tune it easy for guitar players for exemple or whatever you want. (Why not b00bs ?!)
 ## Purpose
-Simple game for nerds drummers :
- * 10 pictures of drums
- * For each, associate their drummer from 3 drummer propositions.
- * Display you score at the end.
-
-## What is already done ?
-* Data relation
-* Models
-* Controllers
-* Administration views
-
+ * 30 pictures of drums
+ * For each, associate their drummer from 3 drummers.
+ * Game Over if you miss, level reached displayed.
 
 ## TODO
- * Add public view. (The real game)
+ * A "jocker" button
+ * Do not display a drum twice
+ * Make the drummer insults when loosing with tooltip
  * May add a music category selection.
