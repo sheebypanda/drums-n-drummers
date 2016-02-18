@@ -6,13 +6,14 @@ Rails.application.routes.draw do
     resources :drums
   end
 
-  get '/', to: 'drummers#welcome'
-  get '/play', to: 'drummers#play'
-  get '/check', to: 'drummers#welcome'
-  post '/check', to: 'drummers#check'
-  get '/loose', to: 'drummers#loose'
+  get '/', to: 'games#welcome'
+  get '/about', to: 'games#about'
+  get '/play', to: 'games#play'
+  get '/check', to: 'games#welcome'
+  post '/check', to: 'games#check'
+  get '/loose', to: 'games#loose'
 
   get '/admin', to: 'drummers#index'
-  root 'drummers#welcome'
+  root 'games#welcome'
 
 end
