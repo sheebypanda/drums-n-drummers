@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
-@import url(https://fonts.googleapis.com/css?family=Oswald);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,800);
 
 body {
@@ -7,7 +5,8 @@ body {
   color: white;
   font-family: 'Roboto', sans-serif;
 }
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
+  font-weight: 800;
 }
 .display-3 {
   font-weight: 800;
@@ -28,6 +27,6 @@ a, a:hover {
 .btn-drummer {
   padding: 0.2rem;
 }
-.popover-content {
-color: black;
+.popover-content, .popover-title {
+color: #373A3C;
 }

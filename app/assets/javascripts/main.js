@@ -4,10 +4,8 @@ var ready = function() {
   });
 
   $(function () {
-    $('[data-toggle="popover"]').popover({
-    container: 'img'
-  })
-  })
+    $('[data-toggle="popover"]').popover('show')
+  });
 
 };
 
