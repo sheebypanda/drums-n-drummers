@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col-md-12">
-    <h1 class="display-3 text-xs-center mt">Do you <%= icon('heart', class: "text-danger animated pulse infinite") %> drums ?</h1>
+    <h1 class="display-3 text-xs-center mt animated bounceInDown">Do you <%= icon('heart', class: "text-danger animated pulse infinite") %> drums ?</h1>
   </div>
 </div>
-<%= link_to icon('gamepad') + " Test your knowledge", "/play", class: "btn btn-primary btn-block btn-lg mt"  %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 center animated bounceInUp">
+    <%= link_to icon('gamepad') + " Test your knowledge", "/play", class: "btn btn-primary btn-lg mt"  %>
+  </div>
+</div>

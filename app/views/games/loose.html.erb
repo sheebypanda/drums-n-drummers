@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<h3 class="center"><span class="label label-pill label-danger center animated flash">Level : <%= @lvl %></span></h3>
+<h4 class="center"><span class="label label-pill label-danger center animated flash">Level : <%= @lvl %></span></h4>
 <div class="row">
   <div class="col-md-12">
     <%= cl_image_tag(@drum.picture, width: 500, id: "img-loose", class: "img-thumbnail img-fluid center-block animated hinge") %>
@@ -24,5 +24,5 @@
 </h3>
 
 <div class="center">
-  <%= link_to icon('reply') + " Retry", '/play', class: "btn btn-danger btn-lg animated flash" %>
+  <%= link_to icon('reply') + " Retry", '/play', class: "btn btn-danger animated flash" %>
 </div>

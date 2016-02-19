@@ -1,6 +1,6 @@
-<h2 class="text-xs-center">Whose drum is this ?</h2>
+<h3 class="text-xs-center">Whose drum is this ?</h3>
 
-<h3 class="text-xs-center"><span class="label label-pill label-primary center animated flash">Level : <%= @lvl %></span></h3>
+<h4 class="text-xs-center"><span class="label label-pill label-primary center animated flash">Level : <%= @lvl %></span></h4>
 
 <div class="row form-group">
   <div class="col-md-12">
@@ -31,13 +31,5 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 lvl">
     <progress class="progress animated flipInX" value="<%= @lvl %>" max="30"><%= @lvl %>%</progress>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3 lvl">
-    <label class="btn btn-secondary btn-drummer">
-      <%= check_box_tag 'jocker', @jocker %>
-      <p class="small"><%= icon('repeat') + @jocker %>Jocker</p>
-    </label>
   </div>
 </div>
