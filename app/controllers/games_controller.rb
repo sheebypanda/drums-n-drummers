@@ -1,45 +1,54 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [ :play, :check ]
-  def  @@lvl = 1
-  end
+  attr_accessor :lvl, :drums
 
   def welcome
   end
   def about
   end
   def play
-  end
-  def check
-    jocker = params[:jocker].to_i
-    drummer_id = params[:id].to_i
-    drum_id = params[:drum]
-    drum = Drum.find(drum_id)
-    if drummer_id == drum.drummer_id
-      @@lvl += 1
-      @lvl = @@lvl.to_s
-      flash.now[:notice] = "Well done !"
-      render 'play'
-    elsif drummer_id != drum.drummer_id
-      @lvl = @@lvl.to_s
-      @drum = drum
-      flash.now[:alert] = "Miss..."
-      render 'loose'
-    else
-      render 'play'
-    end
+    lvlup(lvl)
+    # unless lvl >= 2
+      set_drums
+    # end
+    @drummers = Drummer.where.not(id: drum.drummer_id).limit(2).order("RANDOM()")
+    @drummers << drum.drummer
+    @drummers = @drummers.shuffle
+    render 'play'
   end
   def loose
+      @lvl = @lvl.to_s
+      @drum = Drum.find(params[:drum])
+      flash.now[:alert] = "Miss..."
+      render 'loose'
+  end
+  def check
+    @lvl = params[:lvl]
+    drummer_id = params[:id].to_i
+    drum = Drum.find(params[:drum])
+    if drummer_id == drum.drummer_id
+      well_done
+      play
+    else drummer_id != drum.drummer_id
+      loose
+    end
   end
 
   private
 
-  def set_game
+  def set_drums
     @drums = Drum.all
-    @drum = @drums[@@lvl]
-    # @drum = Drum.limit(1).order("RANDOM()")
-    @drummers = Drummer.where.not(id: @drum.drummer_id).limit(2).order("RANDOM()")
-    @drummers << @drum.drummer
-    @drummers = @drummers.shuffle
+  end
+  def drums
+    @drums
+  end
+  def drum
+    @drum = drums[lvl]
+  end
+  def lvlup(value)
+    @lvl = 1 + value.to_i
+  end
+  def well_done
+    flash.now[:notice] = "Well done !"
   end
 
 end
