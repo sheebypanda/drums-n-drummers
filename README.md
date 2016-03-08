@@ -5,10 +5,9 @@ You can fork it and tune it easy for guitar players for exemple or whatever you 
 ## Purpose
  * 30 pictures of drums
  * For each, associate their drummer from 3 drummers.
- * Game Over if you miss, level reached displayed.
+ * Game Over if you miss, level reached displayed, and the drummer you missed insults you.
 
 ## TODO
  * A "jocker" button
  * Do not display a drum twice
- * Make the drummer insults when loosing with tooltip
  * May add a music category selection.

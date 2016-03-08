@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/check', to: 'games#welcome'
   post '/check', to: 'games#check'
   get '/loose', to: 'games#loose'
+  get '/congrat', to: 'games#congrat'
 
   get '/admin', to: 'drummers#index'
   root 'games#welcome'
